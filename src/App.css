@@ -1,0 +1,201 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(41, 121, 255, 0.2);
+  color: #1B2F4F;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #2979FF;
+  outline-offset: 2px;
+}
+
+/* Image loading placeholder */
+img {
+  background: linear-gradient(135deg, #EDF5FF 0%, #f5f5f5 100%);
+}
+
+/* Prevent layout shift */
+img[src] {
+  background: transparent;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-brand-blue text-white px-6 py-3 rounded-xl font-semibold transition-all;
+}
+
+.btn-primary:hover {
+  @apply bg-brand-dark-blue shadow-lg;
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.feature-card {
+  @apply bg-white rounded-2xl p-6 border border-gray-100 transition-all;
+}
+
+.feature-card:hover {
+  @apply shadow-card-hover border-brand-pale-blue/30;
+  transform: translateY(-4px);
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-light-blue;
+}
+
+/* Glass morphism */
+.glass-card {
+  @apply bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl;
+}
+
+/* Section transitions */
+section {
+  @apply relative;
+}
+
+/* Animation utilities */
+.animate-in {
+  animation: animateIn 0.6s ease-out forwards;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon container */
+.icon-container {
+  @apply w-12 h-12 rounded-xl flex items-center justify-center transition-all;
+}
+
+.icon-container-blue {
+  @apply bg-brand-bg text-brand-blue;
+}
+
+.icon-container-blue:hover {
+  @apply bg-brand-blue text-white;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-4xl;
+  }
+  
+  h2 {
+    @apply text-3xl;
+  }
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply bg-gray-200 rounded animate-pulse;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+}
+
+.badge-blue {
+  @apply bg-brand-bg text-brand-blue;
+}
+
+/* Stats counter */
+.stat-number {
+  @apply text-4xl font-bold text-brand-dark-blue;
+}
+
+.stat-label {
+  @apply text-sm text-gray-500;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  @apply bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10;
+}
+
+.testimonial-card:hover {
+  @apply bg-white/10;
+}
+
+/* Step indicator */
+.step-number {
+  @apply w-12 h-12 rounded-full bg-brand-blue text-white flex items-center justify-center text-xl font-bold;
+}
+
+/* Connector line */
+.connector-line {
+  @apply hidden md:block absolute top-6 left-full w-full h-0.5 bg-gradient-to-r from-brand-blue to-brand-pale-blue;
+}
+
+/* Service orbit animation */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(180px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(180px) rotate(-360deg);
+  }
+}
+
+.orbit-item {
+  animation: orbit 60s linear infinite;
+}
+
+/* Parallax container */
+.parallax-container {
+  @apply relative overflow-hidden;
+}
+
+.parallax-layer {
+  @apply absolute inset-0;
+  will-change: transform;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .orbit-item {
+    animation: none;
+  }
+  
+  .parallax-layer {
+    transform: none !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
